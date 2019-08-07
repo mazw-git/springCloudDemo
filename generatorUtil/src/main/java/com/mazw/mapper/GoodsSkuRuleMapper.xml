@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mazw.mapper.GoodsSkuRuleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.mazw.pojo.GoodsSkuRule">
+        <result column="类别" property="类别" />
+        <result column="布局编码" property="布局编码" />
+        <result column="布局名称" property="布局名称" />
+        <result column="理论单节货架SKU" property="理论单节货架SKU" />
+        <result column="T版货架节数" property="T版货架节数" />
+        <result column="T版理论SKU数" property="T版理论SKU数" />
+        <result column="S版货架节数" property="S版货架节数" />
+        <result column="S版理论SKU数" property="S版理论SKU数" />
+        <result column="M版货架节数" property="M版货架节数" />
+        <result column="M版理论SKU数" property="M版理论SKU数" />
+        <result column="L版货架节数" property="L版货架节数" />
+        <result column="L版理论SKU数" property="L版理论SKU数" />
+        <result column="XL版货架节数" property="XL版货架节数" />
+        <result column="XL版理论SKU数" property="XL版理论SKU数" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        类别, 布局编码, 布局名称, 理论单节货架SKU, T版货架节数, T版理论SKU数, S版货架节数, S版理论SKU数, M版货架节数, M版理论SKU数, L版货架节数, L版理论SKU数, XL版货架节数, XL版理论SKU数
+    </sql>
+
+</mapper>

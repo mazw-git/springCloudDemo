@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace命名空间，作用就是对sql进行分类化管理，理解sql隔离 
+注意：使用mapper代理方法开发，namespace有特殊重要的作用，namespace等于mapper接口地址
+-->
+<mapper namespace="com.bbg.mapper.SpacemanReclassMapper">
+
+	<!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="spacemanReclass">
+        <result column="DEPT" property="dept" />
+        <result column="DEPT_NAME" property="deptName" />
+        <result column="CLASS" property="classFoo" />
+        <result column="CLASS_NAME" property="className" />
+        <result column="SUBCLASS" property="subclass" />
+        <result column="SUB_NAME" property="subName" />
+        <result column="SSUBCLASS" property="ssubclass" />
+        <result column="SSUB_NAME" property="ssubName" />
+        <result column="SPACECLASS_NEW" property="spaceclassNew" />
+        <result column="SPACENAME_NEW" property="spacenameNew" />
+        <result column="SPACE_SKU" property="spaceSku" />
+    </resultMap>
+
+	<select id="getLayoutCategory" resultMap="BaseResultMap" parameterType="map">
+		select *  from  spaceman_reclass 
+       <where>
+       		<if test="ssubclass!=null and ssubclass!=''">
+       			and SSUBCLASS = #{ssubclass}
+       		</if>
+       		<if test="spaceclassNew!=null and spaceclassNew!=''">
+       			and SPACECLASS_NEW = #{spaceclassNew}
+       		</if>
+       </where>
+	</select>
+</mapper>
+
+

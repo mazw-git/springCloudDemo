@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace命名空间，作用就是对sql进行分类化管理，理解sql隔离 
+注意：使用mapper代理方法开发，namespace有特殊重要的作用，namespace等于mapper接口地址
+-->
+<mapper namespace="com.bbg.mapper.GoodsSkuRuleMapper">
+
+	<!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="goodsSkuRule">
+        <result column="类别" property="category" />
+        <result column="布局编码" property="layoutCode" />
+        <result column="布局名称" property="layoutName" />
+        <result column="理论单节货架SKU" property="theorySingleSku" />
+        <result column="T版货架节数" property="tSectionNum" />
+        <result column="T版理论SKU数" property="tTheorySku" />
+        <result column="S版货架节数" property="sSectionNum" />
+        <result column="S版理论SKU数" property="sTheorySku" />
+        <result column="M版货架节数" property="mSectionNum" />
+        <result column="M版理论SKU数" property="mTheorySku" />
+        <result column="L版货架节数" property="lSectionNum" />
+        <result column="L版理论SKU数" property="lTheorySku" />
+        <result column="XL版货架节数" property="xlSectionNum" />
+        <result column="XL版理论SKU数" property="xlTheorySku" />
+    </resultMap>
+
+	<select id="getSkuNum" resultMap="BaseResultMap" parameterType="map">
+		select *  from  goods_sku_rule where 布局编码 in(
+		       select distinct SPACECLASS_NEW from spaceman_reclass 
+		       <where>
+		       		<if test="class!=null and class!=''">
+		       			and CLASS = #{class}
+		       		</if>
+		       		<if test="subclass!=null and subclass!=''">
+		       			and SUBCLASS = #{subclass}
+		       		</if>
+		       		<if test="ssubclass!=null and ssubclass!=''">
+		       			and SSUBCLASS = #{ssubclass}
+		       		</if>
+		       </where>
+		)
+	</select>
+	<select id="getSkuNumPage" resultMap="BaseResultMap" parameterType="map">
+		select *  from  goods_sku_rule where 布局编码 in(
+		       select distinct SPACECLASS_NEW from spaceman_reclass 
+		       <where>
+		       		<if test="class!=null and class!=''">
+		       			and CLASS = #{class}
+		       		</if>
+		       		<if test="subclass!=null and subclass!=''">
+		       			and SUBCLASS = #{subclass}
+		       		</if>
+		       		<if test="ssubclass!=null and ssubclass!=''">
+		       			and SSUBCLASS = #{ssubclass}
+		       		</if>
+		       </where>
+		)
+	</select>
+</mapper>
+
+
