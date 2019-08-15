@@ -2,7 +2,7 @@ package com.bbg.service;
 
 import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.service.IService;
-import com.bbg.pojo.Inventory;
+import com.bbg.pojo.TLoggerInfos;
 
 /**
  * <p>
@@ -10,9 +10,9 @@ import com.bbg.pojo.Inventory;
  * </p>
  *
  * @author Yanghu
- * @since 2019-08-01
+ * @since 2019-08-14
  */
-@DS("mysql")
-public interface InventoryService extends IService<Inventory> {
+@DS("log")
+public interface TLoggerInfosService extends IService<TLoggerInfos> {
 
 }

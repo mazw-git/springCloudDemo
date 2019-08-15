@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mazw.mapper.TLoggerInfosMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.bbg.pojo.TLoggerInfos">
+        <id column="ali_id" property="aliId" />
+        <result column="ali_client_ip" property="aliClientIp" />
+        <result column="ali_uri" property="aliUri" />
+        <result column="ali_type" property="aliType" />
+        <result column="ali_method" property="aliMethod" />
+        <result column="ali_param_data" property="aliParamData" />
+        <result column="ali_session_id" property="aliSessionId" />
+        <result column="ali_time" property="aliTime" />
+        <result column="ali_return_time" property="aliReturnTime" />
+        <result column="ali_return_data" property="aliReturnData" />
+        <result column="ali_http_status_code" property="aliHttpStatusCode" />
+        <result column="ali_time_consuming" property="aliTimeConsuming" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ali_id, ali_client_ip, ali_uri, ali_type, ali_method, ali_param_data, ali_session_id, ali_time, ali_return_time, ali_return_data, ali_http_status_code, ali_time_consuming
+    </sql>
+
+</mapper>

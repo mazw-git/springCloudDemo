@@ -116,7 +116,12 @@
 		    <version>4.1</version>
 		</dependency>
 		
-				
+		<!-- Json解析 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.31</version>
+		</dependency>
 	</dependencies>
 	
 	<!--  maven打jar包插件 -->

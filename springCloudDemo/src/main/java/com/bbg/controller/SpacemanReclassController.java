@@ -11,18 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
-
-
-
-
-
-
-
-
-
 import com.baomidou.dynamic.datasource.annotation.DS;
-import com.baomidou.mybatisplus.plugins.Page;
 import com.bbg.pojo.GoodsSkuRule;
 import com.bbg.pojo.Inventory;
 import com.bbg.pojo.SpacemanReclass;
@@ -80,9 +69,9 @@ public class SpacemanReclassController {
     public List<GoodsSkuRule> getGoodsSkuRuleList(){
         return goodsSkuRuleService.getGoodsSkuRuleList();
     }
+    
     @ResponseBody
     @RequestMapping("/testDynamicDatasource")
-    @DS("mysql")
     public List<Inventory> testDynamicDatasource(){
        List<Inventory> list = inventoryService.selectList(null);
        return list;
